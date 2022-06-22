@@ -4,6 +4,8 @@ const blogModel = require('../models/blogsModel')
 
 const createBlog = async function (req, res) {
 
+    //this is try block
+
     try {
         let data = req.body;
         if (!data.title) return res.status(400).send({ status: false, msg: " Title is Missing" })
