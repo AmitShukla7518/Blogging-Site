@@ -2,8 +2,6 @@ const authorModel = require('../models/authorModel');
 const blogModel = require('../models/blogsModel')
 
 
-
-
 const createBlog = async function (req, res) {
 
     try {
