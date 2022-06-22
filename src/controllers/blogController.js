@@ -4,7 +4,6 @@ const blogModel = require('../models/blogsModel')
 
 const createBlog = async function (req, res) {
 
-    //this is try block
 
     try {
         let data = req.body;
