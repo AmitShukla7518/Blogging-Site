@@ -36,14 +36,12 @@ const blogSchema = mongoose.Schema({
     },
 
     deletedAt:{
-        Boolean:false,
         type:Date,
-        default:Date.now
+
     },
 
     updatedAt:{
         type:Date,
-        default:Date.now
     },
 
     isDeleted:{

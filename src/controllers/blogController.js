@@ -10,7 +10,11 @@ const createBlog = async function (req, res) {
         let data = req.body;
         if (!data.title) return res.status(400).send({ status: false, msg: " Title is Missing" })
         if (!data.category) return res.status(400).send({ status: false, msg: " Please Enter Category" })
-        if (Object.key(data).length == 0)
+        if (Object.keys(data).length == 0)
+            return res.status(400).send({ status: false, msg: "Body Cannot be empty" });
+
+        let authorId = req.body.authorId;
+        if (!authorId)
             return res.status(400).send({ status: false, msg: "Enter Author Id" });
 
         let checkAuthorId = await authorModel.findById(authorId);
