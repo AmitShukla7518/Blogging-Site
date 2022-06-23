@@ -14,6 +14,15 @@ router.post("/authors", autherController.createUser);
 
 router.post("/blogs", blogController.createBlog);
 
+router.put("/blogs/:id", blogController.putBlog);
+
+router.put("/blogs/:id", blogController.deleteBlog);
+
+router.get("/loginUser", autherController.loginUser);
+
+
+router.get("/getUserData/:userId", autherController.getUserData);
+
 
 
 module.exports=router;

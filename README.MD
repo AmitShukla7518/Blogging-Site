@@ -49,7 +49,8 @@ example of a query url: blogs?filtername=filtervalue&f2=fv2
 
 ### DELETE /blogs/:blogId
 - Check if the blogId exists( and is not deleted). If it does, mark it deleted and return an HTTP status 200 without any response body.
-- If the blog document doesn't exist then return an HTTP status of 404 with a body like [this](#error-response-structure) 
+- If the blog document doesn't exist then return an HTTP status of 404 with a body like 
+[this](#error-response-structure) 
 
 ### DELETE /blogs?queryParams
 - Delete blog documents by category, authorid, tag name, subcategory name, unpublished

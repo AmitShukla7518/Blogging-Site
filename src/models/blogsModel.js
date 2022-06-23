@@ -1,24 +1,24 @@
 const { default: mongoose } = require('mongoose');
 
-const ObjectId = mongoose.Schema.Types.ObjectId
+let ObjectId = mongoose.Schema.Types.ObjectId
 
 /*
 { title: {mandatory}, body: {mandatory}, authorId: {mandatory, refs to author model}, tags: {array of string}, category: {string, mandatory, examples: [technology, entertainment, life style, food, fashion]}, subcategory: {array of string, examples[technology-[web development, mobile development, AI, ML etc]] }, createdAt, updatedAt, deletedAt: {when the document is deleted}, isDeleted: {boolean, default: false}, publishedAt: {when the blog is published}, isPublished: {boolean, default: false}}
 
 */
-const blogSchema = mongoose.Schema({
+const blogSchema = new mongoose.Schema({
     title:{
         type:String,
-        require:true
+        required:true
     },
     body:{
         type:String,
-        require:true
+        required:true
     },
     authorId:{
         type:ObjectId,
-        require:true,
-        ref:"auther"
+        required:true,
+        ref:"author"
 
     },
 
@@ -28,11 +28,11 @@ const blogSchema = mongoose.Schema({
 
     category:{
         type:String,
-        require:true
+        required:true
     },
     subcategory:{
         type:Array,
-        require:true
+        required:true
     },
 
     deletedAt:{
@@ -46,7 +46,6 @@ const blogSchema = mongoose.Schema({
 
     isDeleted:{
         type:Boolean,
-        default:false
     },
 
     publishedAt:{
