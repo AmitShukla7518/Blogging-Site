@@ -29,6 +29,7 @@ Repository for backend cohort - Radon
 - Create atleast 5 blogs for each author
 - Return HTTP status 400 for an invalid request with a response body like [this](#error-response-structure)
 
+
 ### GET /blogs
 - Returns all blogs in the collection that aren't deleted and are published
 - Return the HTTP status 200 if any documents are found. The response structure should be like [this](#successful-response-structure) 
@@ -69,6 +70,7 @@ example of a query url: blogs?filtername=filtervalue&f2=fv2
 
 ### Authentication
 - Add an authorisation implementation for the JWT token that validates the token before every protected endpoint is called. If the validation fails, return a suitable error message with a corresponding HTTP status code
+
 - Protected routes are create a blog, edit a blog, get the list of blogs, delete a blog(s)
 - Set the token, once validated, in the request - `x-api-key`
 - Use a middleware for authentication purpose.
@@ -78,6 +80,7 @@ example of a query url: blogs?filtername=filtervalue&f2=fv2
 - In case of unauthorized access return an appropirate error message.
 
 ## Testing (Self-evaluation During Development)
+
 - To test these apis create a new collection in Postman named Project 1 Blogging 
 - Each api should have a new request in this collection
 - Each request in the collection should be rightly named. Eg Create author, Create blog, Get blogs etc
@@ -94,7 +97,7 @@ Refer below sample
 ### Successful Response structure
 ```yaml
 {
-  status: true,
+  status: true,9
   data: {
 
   }
