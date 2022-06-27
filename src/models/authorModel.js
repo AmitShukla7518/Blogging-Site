@@ -11,7 +11,7 @@ var validateEmail = function(email) {
 
 
 const authorSchema = new mongoose.Schema({
-    firstName:{
+    fname:{
         type:String,
         require:true
     },
