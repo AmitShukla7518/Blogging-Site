@@ -15,7 +15,7 @@ const authorSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    lastName:{
+    lname:{
         type:String,
         require:true
     },
