@@ -136,7 +136,7 @@ const DeletedByQuery = async function (req, res, next) {
     )
 //
     console.log(result);
-    res.send({msg: result})
+    res.status(200).send({msg: result})
 
 }
 
