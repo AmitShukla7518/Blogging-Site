@@ -17,7 +17,7 @@ router.post("/login",Middilware.LoginAuther)
 router.post("/blogs", Middilware.mid2,blogController.createBlog);
 router.get("/blogs",Middilware.mid2 ,blogController.GetDataBlog)
 router.put("/blogs/:blogId",Middilware.mid2,blogController.putBlog);
-router.put("/blogs/:blogId", Middilware.mid2,blogController.deleteBlog);
+router.delete("/blogs/:blogId", Middilware.mid2,blogController.deleteBlog);
 router.delete("/blogs", Middilware.mid2,blogController.DeletedByQuery)
 // router.get("/getUserData/:userId", autherController.getUserData);
 // router.get("/loginUser", autherController);
