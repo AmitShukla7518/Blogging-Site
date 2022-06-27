@@ -17,7 +17,7 @@ const LoginAuther =  async function (req, res, next) {
     );
     // res.setHeaders("x-auth-token", token)
     res.setHeader("x-auth-token", token)
-    res.send({ status: true, token: token })
+    res.status(200).send({ status: true, token: token })
     console.log("Token Generated Successsfully");
     next()
 }
