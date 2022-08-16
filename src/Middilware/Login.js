@@ -1,6 +1,5 @@
 const authorModel = require('../models/authorModel');
 const jwt = require('jsonwebtoken')
-
 const LoginAuther =  async function (req, res, next) {
     let UserName = req.body.email
     let Password = req.body.password
@@ -21,38 +20,27 @@ const LoginAuther =  async function (req, res, next) {
     console.log("Token Generated Successsfully");
     next()
 }
-
-
-
-
 const Tokenvarify = async function (req, res,next) {
     try {
         let Token = req.headers["x-auth-token"]
         let CurrentDateandtime = Date()
-        // console.log(Token);
         let DecodeToken = await jwt.verify(Token, "Sandip-Amit-Alok")
-
-        if (!DecodeToken) {
+         if (!DecodeToken) {
        return res.status(400).send({ status: false, msg: "Token is Invalid" })
         }
         else {
-            // console.log(Token);
             console.log(' "Token  Varifyed Successfully " '+(CurrentDateandtime) );
         }
-
-        next()
+       next()
     }
-    
     catch (err) {
         res.status(400).send({status:false,Error: err.message})
-        
         console.log(err);
     }
-
 }
-
-module.exports.LoginAuther = LoginAuther
-module.exports.mid2 = Tokenvarify
+module.exports={LoginAuther,Tokenvarify}
+// module.exports.LoginAuther = LoginAuther
+// module.exports.mid2 = Tokenvarify
 
 
 

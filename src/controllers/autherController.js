@@ -55,8 +55,6 @@ const getUserData = async function(req, res){
 
     res.send({status:true, msg:userDetails})
 }
-
-
 module.exports.createUser = createUser;
 module.exports.loginUser = loginUser;
 module.exports.getUserData = getUserData;
